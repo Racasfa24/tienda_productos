@@ -1,8 +1,8 @@
-package com.Services.Services;
+package com.Startup.tienda.Services;
 
 import java.util.List;
 
-import com.Entities.Categorias;
+import com.Startup.tienda.Entities.Categorias;
 
 public interface CategoriaService  {
     

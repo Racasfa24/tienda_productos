@@ -1,6 +1,8 @@
-package com.Entities;
+package com.Startup.tienda.Entities;
 
 import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -15,14 +17,15 @@ public class Categorias {
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private int id;
     private String nombre;
 
     //--Una categoría puede pertenecer a varios productos.
-    @OneToMany(mappedBy = "categoria")
+    @OneToMany(mappedBy = "categoria_fk")
+    @JsonManagedReference
     List <Productos> productos;
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -34,7 +37,7 @@ public class Categorias {
         this.productos = productos;
     }
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 

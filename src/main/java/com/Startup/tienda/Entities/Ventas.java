@@ -1,4 +1,4 @@
-package com.Entities;
+package com.Startup.tienda.Entities;
 
 import java.sql.Date;
 import java.util.ArrayList;
@@ -19,7 +19,7 @@ public class Ventas {
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private int id;
     private double totalVenta;
     private Date fechaVenta;
 
@@ -32,7 +32,7 @@ public class Ventas {
     )
     private List<Productos> productos = new ArrayList<>();
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
     public Date getFechaVenta() {
@@ -44,7 +44,7 @@ public class Ventas {
     public double getTotalVenta() {
         return totalVenta;
     }
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
     public void setTotalVenta(double totalVenta) {

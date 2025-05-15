@@ -1,25 +1,18 @@
-package com.Services.ServicesImpl;
+package com.Startup.tienda.Services;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.Entities.Categorias;
-import com.Repositories.Repositories.CategoriasRepository;
-import com.Services.Services.CategoriaService;
+import com.Startup.tienda.Entities.Categorias;
+import com.Startup.tienda.Repositories.CategoriasRepository;
 
 @Service
 public class CategoriaServiceImpl implements CategoriaService {
     
-    private final CategoriasRepository repository;
-
-    public CategoriaServiceImpl (CategoriasRepository repository){
-
-        this.repository = repository;
-
-    }
+    @Autowired
+    private CategoriasRepository repository;
 
     @Override
     public List<Categorias> encontrarTodasLasCategorias(){
