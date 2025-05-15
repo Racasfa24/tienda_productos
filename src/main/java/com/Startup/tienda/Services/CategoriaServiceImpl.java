@@ -20,6 +20,7 @@ public class CategoriaServiceImpl implements CategoriaService {
     @Override
     public List<CategoriaDTO> encontrarTodasLasCategorias(){
 
+        //--Con esto se mapea todas las Entidades encontradas por el repositorio a un DTO, para no mostrar todo sobre la entidad y prevenir la referenciación infinita (LAZY)
         List<CategoriaDTO> categoriasEncontradas = repository.findAll().stream().map(categoria -> new CategoriaDTO(
                 categoria.getId(),
                 categoria.getNombre()
@@ -32,6 +33,7 @@ public class CategoriaServiceImpl implements CategoriaService {
     @Override
     public RespuestaDTO guardarCategoria(CategoriaDTO categoria){
 
+        //--Como se recibe un DTO, se debe crear una entidad para poder guardarla en la base
         Categorias nuevaCategoria = new Categorias();
         nuevaCategoria.setNombre(categoria.getNombre());
         repository.save(nuevaCategoria);
