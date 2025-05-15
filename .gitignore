@@ -33,5 +33,5 @@ build/
 .vscode/
 
 #Ignored files
-**/env.properties
+tienda\src\main\resources\env.properties
 

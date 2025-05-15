@@ -16,10 +16,12 @@ import jakarta.persistence.Table;
 public class Categorias {
     
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String nombre;
+    private String estatus;
 
+    
     //--Una categoría puede pertenecer a varios productos.
     @OneToMany(mappedBy = "categoria_fk")
     @JsonManagedReference
@@ -47,6 +49,14 @@ public class Categorias {
 
     public List<Productos> getProductos() {
         return productos;
+    }
+
+    public String getEstatus() {
+        return estatus;
+    }
+
+    public void setEstatus(String estatus) {
+        this.estatus = estatus;
     }
 
     
