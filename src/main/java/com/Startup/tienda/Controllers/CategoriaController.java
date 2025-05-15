@@ -29,12 +29,8 @@ public class CategoriaController {
     @GetMapping("/enlistar")
     public List<CategoriaDTO> enlistarCategorias() {
 
-        return servicio.encontrarTodasLasCategorias().stream()
-            .map(categoria -> new CategoriaDTO(
-                categoria.getId(),
-                categoria.getNombre()
-            )).collect(Collectors.toList());
-            
+        return servicio.encontrarTodasLasCategorias();
+
     }
     
     @PostMapping("/guardar")
