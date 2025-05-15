@@ -32,5 +32,6 @@ build/
 ### VS Code ###
 .vscode/
 
-#Ignored files#
-/env.properties
+#Ignored files
+**/env.properties
+
