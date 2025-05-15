@@ -4,6 +4,13 @@ public class CategoriaDTO {
 
     private int id;
     private String nombre;
+
+    public CategoriaDTO(int id, String nombre){
+            
+        this.id = id;
+        this.nombre = nombre;
+
+    }
     public int getId() {
         return id;
     }
