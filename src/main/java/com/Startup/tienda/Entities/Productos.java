@@ -1,7 +1,9 @@
-package com.Entities;
+package com.Startup.tienda.Entities;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -19,7 +21,8 @@ public class Productos {
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private int id;
+
     private String nombre;
     private String descripcion;
     private double precio;
@@ -27,21 +30,22 @@ public class Productos {
 
     //--Un producto solo tiene una categoría.
     @ManyToOne
-    @JoinColumn(name="id")
+    @JoinColumn(name="categoria_fk")
+    @JsonBackReference
     private Categorias categoria_fk;
 
     @Lob
     private byte[] imagen_producto;
 
     //--Un producto puede permenecer a varias ventas.
-    @ManyToMany(mappedBy = "producto")
+    @ManyToMany(mappedBy = "productos")
     private List<Ventas> ventas = new ArrayList<>();
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
