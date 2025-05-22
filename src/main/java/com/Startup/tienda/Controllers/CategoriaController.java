@@ -16,9 +16,6 @@ import com.Startup.tienda.DTOS.CategoriaDTO;
 import com.Startup.tienda.DTOS.RespuestaDTO;
 import org.springframework.web.bind.annotation.RequestParam;
 
-
-
-
 @RestController
 @RequestMapping("/api/categorias")
 public class CategoriaController {

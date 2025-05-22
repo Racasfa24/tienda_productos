@@ -8,6 +8,9 @@ public class ProductoDTO {
     private double precio;
     private Long stock;
     private byte[] imagen_producto;
+    private boolean descatalogado;
+
+    
 
     private int categoria_fk;
 
@@ -65,6 +68,14 @@ public class ProductoDTO {
 
     public void setCategoria_fk(int categoria_fk) {
         this.categoria_fk = categoria_fk;
+    }
+
+    public boolean isDescatalogado() {
+        return descatalogado;
+    }
+
+    public void setDescatalogado(boolean descatalogado) {
+        this.descatalogado = descatalogado;
     }
 
     

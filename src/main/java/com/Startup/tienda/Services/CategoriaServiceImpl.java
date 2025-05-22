@@ -15,9 +15,11 @@ import com.Startup.tienda.Repositories.CategoriasRepositoryCustom;
 @Service
 public class CategoriaServiceImpl implements CategoriaService {
     
+    //--Repository contiene los métodos de CRUD básicos.
     @Autowired
     private CategoriasRepository repository;
 
+    //--Repository custom tiene métodos personalizados
     @Autowired
     private CategoriasRepositoryCustom repositoryCustom;
 
