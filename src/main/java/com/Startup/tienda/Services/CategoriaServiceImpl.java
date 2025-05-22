@@ -131,4 +131,26 @@ public class CategoriaServiceImpl implements CategoriaService {
 
     }
 
+    @Override
+    public RespuestaDTO cambiarNombeCategoria(int id, String nombreNuevo){
+
+        Categorias categoriaParaModificar = repository.findById(id).orElse(null);
+        RespuestaDTO respuesta = new RespuestaDTO();
+
+        if(categoriaParaModificar == null){
+
+            respuesta.setMensaje("La categoría no fue encontrada");
+
+        }else{
+
+            categoriaParaModificar.setNombre(nombreNuevo);
+            repository.save(categoriaParaModificar);
+            respuesta.setMensaje("Nombre cambiado correctamente");
+            respuesta.setEntidad(categoriaParaModificar);
+
+        }
+        return respuesta;
+
+
+    }
 }

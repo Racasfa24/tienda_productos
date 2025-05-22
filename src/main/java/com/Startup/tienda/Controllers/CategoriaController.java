@@ -55,6 +55,14 @@ public class CategoriaController {
         return servicio.revivirCategoriaPorId(id);
         
     }
+
+    @PostMapping("/cambiarNombreCategoria")
+    public RespuestaDTO cambiarNombreCategoria(@RequestBody CategoriaDTO categoria) {
+
+        return servicio.cambiarNombeCategoria(categoria.getId(), categoria.getNombre());
+        
+    }
+    
     
     
     

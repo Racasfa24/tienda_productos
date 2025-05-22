@@ -12,5 +12,5 @@ public interface CategoriaService  {
     public RespuestaDTO encontrarCategoriaPorId(int id);
     public RespuestaDTO prohibirCategoriaPorId(int id);
     public RespuestaDTO revivirCategoriaPorId(int id);
-
+    public RespuestaDTO cambiarNombeCategoria (int id, String nombreNuevo);
 }
