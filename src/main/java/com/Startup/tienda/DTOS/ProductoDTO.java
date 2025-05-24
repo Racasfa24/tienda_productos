@@ -9,7 +9,7 @@ public class ProductoDTO {
     private Long stock;
     private byte[] imagen_producto;
     private boolean descatalogado;
-
+    
     
 
     private int categoria_fk;
